@@ -19,6 +19,7 @@
     "story:build": "histoire build",
     "story:preview": "histoire preview",
     "sync:i18n": "bin/sync_i18n_file_change",
+    "prod:prepare": "docker compose -f docker-compose.production.yaml run --rm rails bundle exec rails db:chatwoot_prepare",
     "prod:up": "docker compose -f docker-compose.production.yaml up -d",
     "prod:down": "docker compose -f docker-compose.production.yaml down",
     "ssh": "ssh -i ./cert/faepenmt-chatwoot.pem ubuntu@35.174.139.126"
