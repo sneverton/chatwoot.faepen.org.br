@@ -20,7 +20,8 @@
     "story:preview": "histoire preview",
     "sync:i18n": "bin/sync_i18n_file_change",
     "prod:up": "docker compose -f docker-compose.production.yaml up -d",
-    "prod:down": "docker compose -f docker-compose.production.yaml down"
+    "prod:down": "docker compose -f docker-compose.production.yaml down",
+    "ssh": "ssh -i ./cert/faepenmt-chatwoot.pem ubuntu@35.174.139.126"
   },
   "size-limit": [
     {
