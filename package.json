@@ -18,7 +18,9 @@
     "story:dev": "histoire dev",
     "story:build": "histoire build",
     "story:preview": "histoire preview",
-    "sync:i18n": "bin/sync_i18n_file_change"
+    "sync:i18n": "bin/sync_i18n_file_change",
+    "prod:up": "docker compose -f docker-compose.production.yaml up -d",
+    "prod:down": "docker compose -f docker-compose.production.yaml down"
   },
   "size-limit": [
     {
