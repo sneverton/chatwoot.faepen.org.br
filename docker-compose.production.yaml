@@ -59,10 +59,32 @@ services:
     ports:
       - "127.0.0.1:6379:6379"
 
+  nginx:
+    image: jc21/nginx-proxy-manager:latest
+    depends_on:
+      - rails
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    environment:
+      - DISABLE_IPV6=true
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+    networks:
+      default: {}
+      reverse-proxy:
+        aliases:
+          - nginx-proxy
+
 volumes:
   storage_data:
   postgres_data:
   redis_data:
+  npm_data:
+  npm_letsencrypt:
 
 networks:
   reverse-proxy:
